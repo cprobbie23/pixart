@@ -28,7 +28,9 @@
     }
 
     $('.square').click(function(event){
-      $(event.target).css('backgroundColor', 'green')
+      var $input = $('input')
+      var color = $input.val()
+      $(event.target).css('backgroundColor', color);
     })
   </script>
 </body>
