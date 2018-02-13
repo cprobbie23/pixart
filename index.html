@@ -42,11 +42,11 @@
       var $square = $('.square')
       var search = $('.search_box').val()
       var options = {
-        url: 'http://www.omdbapi.com/?apikey=2f6435d9&s=' + search,
+        url: 'http://www.omdbapi.com/?apikey=2f6435d9&t=' + search,
         method: 'get' // default
       }
       $.ajax(options).done(function(res){
-        $square.css('backgroundImage', res.Search.first.Poster)
+        $square.css('backgroundImage', res.Poster)
       })
     }) 
   </script>
