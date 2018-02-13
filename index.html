@@ -10,10 +10,15 @@
   <div class="square"></div>
   <form action="">
     <input type="text">
-    <button>Set Color</button>
+    <button id="paint">Set Color</button>
+  </form><form action="">
+    <input class="search_box" type="text">
+    <button id="stamp">Set Stamp</button>
   </form>
+
+
   <script>
-    $('button').click(function(event){
+    $('#paint').click(function(event){
       event.preventDefault();
       var $square = $('.square')
       var $input = $('input')
@@ -32,6 +37,18 @@
       var color = $input.val()
       $(event.target).css('backgroundColor', color);
     })
+
+    $('#stamp').click(function(){
+      var $square = $('.square')
+      var search = $('.search_box').val()
+      var options = {
+        url: 'http://www.omdbapi.com/?apikey=2f6435d9&s=' + search,
+        method: 'get' // default
+      }
+      $.ajax(options).done(function(res){
+        $square.css('backgroundImage', res.Search.first.Poster)
+      })
+    }) 
   </script>
 </body>
 </html>
