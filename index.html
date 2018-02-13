@@ -26,6 +26,10 @@
         "class": 'square'
       }).appendTo(document.body)
     }
+
+    $('.square').click(function(event){
+      $(event.target).css('backgroundColor', 'green')
+    })
   </script>
 </body>
 </html>
