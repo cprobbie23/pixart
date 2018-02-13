@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>pixart</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="box" style="width: 200px; height: 200px; border: 1px solid black;"></div>
+  <input type="text">
+  <button>Set Color</button>
+
+  <script>
+    $('button').click(function(event){
+      event.preventDefault();
+      var $box = $('.box')
+      var $input = $('input')
+      var color = $input.val()
+      $box.css('backgroundColor', color);
+    })
+  </script>
+</body>
+</html>
