@@ -27,7 +27,7 @@
       }).appendTo(document.body)
     }
 
-    $('.square').click(function(event){
+    $('.square').mouseover(function(event){
       var $input = $('input')
       var color = $input.val()
       $(event.target).css('backgroundColor', color);
